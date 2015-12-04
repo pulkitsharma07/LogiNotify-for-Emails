@@ -15,7 +15,7 @@ def count_unread_msgs(user, passwd):
 
     opener = urllib2.build_opener(auth_handler)
     urllib2.install_opener(opener)
-    feed = urllib2.urlopen('https://mail.google.com/mail/feed/atom/%5Esmartlabel_personal')
+    feed = urllib2.urlopen('https://mail.google.com/mail/feed/atom/')
     parsed = parse(feed.read())
     return parsed.feed.fullcount
 
