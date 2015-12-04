@@ -15,7 +15,12 @@ def count_unread_msgs(user, passwd):
 
     opener = urllib2.build_opener(auth_handler)
     urllib2.install_opener(opener)
-    feed = urllib2.urlopen('https://mail.google.com/mail/feed/atom/')
+    try:
+        feed = urllib2.urlopen('https://mail.google.com/mail/feed/atom/')
+    except:
+        print "Cannot connect to Atom feed"
+        return 0
+        
     parsed = parse(feed.read())
     return parsed.feed.fullcount
 
