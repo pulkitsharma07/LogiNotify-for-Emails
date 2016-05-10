@@ -8,9 +8,9 @@ class Blinker:
     def __init__(self,username,password,R,G,B):
         self.username = username
         self.password = password
-        self.R = int(R > 0)
-        self.G = int(G > 0)
-        self.B = int(B > 0)
+        self.R = int(R > 0)*100
+        self.G = int(G > 0)*100
+        self.B = int(B > 0)*100
 
 
     def count_unread_msgs(self):
