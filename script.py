@@ -26,7 +26,7 @@ class Blinker:
         opener = urllib2.build_opener(auth_handler)
         urllib2.install_opener(opener)
         try:
-            feed = urllib2.urlopen('https://mail.google.com/mail/feed/atom/')
+            feed = urllib2.urlopen('https://mail.google.com/mail/feed/atom/important')
         except:
             print "Cannot connect to Atom feed"
             return 0
